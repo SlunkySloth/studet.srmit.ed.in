@@ -26,7 +26,7 @@ The public page URL has this format:
 https://YOUR-PROJECT.vercel.app/srmtrichystudentportal/students/report/studentTransportBookingVerify.jsp?token=YOUR-TOKEN
 ```
 
-The path and query format mirror the original page. The hostname is your own Vercel domain or a custom domain you control. The `.jsp` page is static HTML here; `vercel.json` supplies the HTML content type so it opens in the browser. The token parameter is preserved in the address but does not perform backend validation or select a different student record.
+The path and query format mirror the original page. The hostname is your own Vercel domain or a custom domain you control. The `.jsp` page is static HTML here; `vercel.json` supplies the HTML content type so it opens in the browser. The config explicitly serves `/` from `index.html` and removes trailing slashes. Each entry point keeps its own HTML file so its relative asset paths resolve correctly. The token parameter is preserved in the address but does not perform backend validation or select a different student record.
 
 This deployment publishes only `frontend/dist`; the receipt PDF, source archive, and visual verification files outside that directory are not part of the hosted site.
 
